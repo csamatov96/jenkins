@@ -47,6 +47,7 @@ resource "aws_instance" "jenkins_master" {
     
 
     inline = [
+  "sudo yum install nmap-ncat.x86_64 -y"
 	"sudo yum install java-1.8.0-openjdk-devel curl -y",
         "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
         "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
@@ -68,11 +69,11 @@ resource "aws_instance" "jenkins_master" {
 
         
 
-	/*"# These commands below installs terraform",
-	"wget -P /tmp https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip",
-	"unzip /tmp/terraform_0.11.14_linux_amd64.zip",
+	"# These commands below installs terraform",
+	"wget -P /tmp https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip",
+	"unzip /tmp/terraform_0.11.7_linux_amd64.zip",
 	"sudo mv terraform /bin",
-	"terraform version",*/
+	"terraform version",
 
         "# These commands below used for disabling host key verification",
         "sudo mv /tmp/.ssh /var/lib/jenkins/ &> /dev/null",
@@ -92,6 +93,6 @@ resource "aws_instance" "jenkins_master" {
 
 
   tags = {
-    Name = "jenkins_master"              
+    Name = "jenkins_master_node"              
   }
 }
