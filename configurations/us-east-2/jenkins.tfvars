@@ -1,11 +1,11 @@
 # Below code is used to set backend only
-s3_bucket                       =	"acirrustech-iaac"
-s3_folder_region                =	"us-east-1"
-vpc_id		    	            =	"vpc-1471ad6e"
+s3_bucket                       =	"us-east-2-jenkins" ######
+s3_folder_region                =	"us-east-2" #####
+vpc_id		    	            =	"vpc-e0d5318b" #####
 zone_id			                =	"Z6XWWD56QDJWX" 
 domain			                =	"csamatov.net"
 base_domain			            =	"csamatov.net"
-region 			                = 	"us-east-1"
+region 			                = 	"us-east-2" ########
 
 
 # Please do not change below

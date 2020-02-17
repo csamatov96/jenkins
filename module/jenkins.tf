@@ -65,20 +65,14 @@ resource "aws_instance" "jenkins_master" {
 
 
 
-        "# Installs packer",
-        "sudo yum install wget unzip -y",
-        "wget -P /tmp https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip",
-        "unzip /tmp/packer_1.5.1_linux_amd64.zip",
-        "sudo rm  /sbin/packer &>/dev/null  ",
-        "sudo mv packer /bin",
-        "packer version",
+
         
 
-	"# These commands below installs terraform",
+	/*"# These commands below installs terraform",
 	"wget -P /tmp https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip",
 	"unzip /tmp/terraform_0.11.14_linux_amd64.zip",
 	"sudo mv terraform /bin",
-	"terraform version",
+	"terraform version",*/
 
         "# These commands below used for disabling host key verification",
         "sudo mv /tmp/.ssh /var/lib/jenkins/ &> /dev/null",
