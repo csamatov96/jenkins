@@ -50,6 +50,7 @@ resource "aws_instance" "jenkins_master" {
   "sudo yum install nmap-ncat.x86_64 -y", ####
   "sudo yum install wget -y",
   "sudo yum install unzip -y",
+  "sudo yum install git -y",
 
 	"sudo yum install java-1.8.0-openjdk-devel curl -y",
         "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
