@@ -48,6 +48,7 @@ resource "aws_instance" "jenkins_master" {
 
     inline = [
   "sudo yum install nmap-ncat.x86_64 -y", ####
+  
 	"sudo yum install java-1.8.0-openjdk-devel curl -y",
         "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
         "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
@@ -55,14 +56,14 @@ resource "aws_instance" "jenkins_master" {
         "sudo systemctl start jenkins",
 
 
-	"# These commands below installs docker and configure",
+	/*"# These commands below installs docker and configure",
         "sudo curl -fsSL https://get.docker.com/ | sh",
 	"sudo systemctl enable docker", 
 	"sudo systemctl start docker",
         "sudo usermod -aG docker  -s /bin/bash jenkins", 
 	"sudo cp -r /etc/skel/.*	/var/lib/jenkins",
         "sudo usermod -aG docker jenkins", 
-	"sudo chmod 777 /var/run/docker.sock",	
+	"sudo chmod 777 /var/run/docker.sock",	*/
 
 
 
@@ -75,17 +76,17 @@ resource "aws_instance" "jenkins_master" {
 	"sudo mv terraform /bin",
 	"terraform version",
 
-        "# These commands below used for disabling host key verification",
+        /*"# These commands below used for disabling host key verification",
         "sudo mv /tmp/.ssh /var/lib/jenkins/ &> /dev/null",
         "sudo chown -R jenkins:jenkins /var/lib/jenkins/",
-	"sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa",
+	"sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa",*/
 
 
-	"# The commands below install awscli",
+	/*"# The commands below install awscli",
 	"sudo yum install epel-release -y",
 	"sudo yum install python-pip -y",
 	"sudo pip install awscli",
-   	"sudo yum install git -y",
+   	"sudo yum install git -y",*/
 
 
     ]
