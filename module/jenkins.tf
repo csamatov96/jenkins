@@ -82,7 +82,7 @@ resource "aws_instance" "jenkins_master" {
         "# These commands below used for disabling host key verification",
         "sudo mv /tmp/.ssh /var/lib/jenkins/ &> /dev/null",
         "sudo chown -R jenkins:jenkins /var/lib/jenkins/",
-	"sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa",*/
+	"sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa",
 
 
 	/*"# The commands below install awscli",
