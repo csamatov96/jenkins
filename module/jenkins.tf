@@ -66,7 +66,7 @@ resource "aws_instance" "jenkins_master" {
         "sudo usermod -aG docker  -s /bin/bash jenkins", 
 	"sudo cp -r /etc/skel/.*	/var/lib/jenkins",
         "sudo usermod -aG docker jenkins", 
-	"sudo chmod 777 /var/run/docker.sock",	*/
+	"sudo chmod 777 /var/run/docker.sock",*/	
 
 
 
@@ -79,7 +79,7 @@ resource "aws_instance" "jenkins_master" {
 	"sudo mv terraform /bin",
 	"terraform version",
 
-        /*"# These commands below used for disabling host key verification",
+        "# These commands below used for disabling host key verification",
         "sudo mv /tmp/.ssh /var/lib/jenkins/ &> /dev/null",
         "sudo chown -R jenkins:jenkins /var/lib/jenkins/",
 	"sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa",*/
