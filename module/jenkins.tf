@@ -1,6 +1,6 @@
 data "aws_ami" "centos" {
   most_recent = true
-  owners      = ["679593333241"] #
+  owners      = ["679593333241"] ####
 
   filter {
     name   = "state"
@@ -48,7 +48,7 @@ resource "aws_instance" "jenkins_master" {
 
     inline = [
   "sudo yum install nmap-ncat.x86_64 -y", ####
-  
+
 	"sudo yum install java-1.8.0-openjdk-devel curl -y",
         "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
         "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
